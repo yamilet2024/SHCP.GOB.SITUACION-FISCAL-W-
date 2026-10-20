@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constancia de Situación Fiscal — SAT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background: #ffffff;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #000000;
+        }
+
+        /* === ENCABEZADO MEJORADO === */
+        .header-top {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 8px;
+        }
+        .header-hacienda, .header-sat {
+            font-size: 22px;
+            font-weight: bold;
+            color: #702041;
+        }
+        .linea-separadora {
+            border-bottom: 2px solid #702041;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .gob-mex-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #702041;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        .subtitulo {
+            font-size: 15px;
+            color: #333333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .fecha-hora {
+            font-size: 13px;
+            color: #555555;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        /* === BARRA RFC === */
+        .rfc-bar {
+            background: #F8F9FA;
+            border: 1px solid #CED4DA;
+            border-radius: 4px;
+            padding: 8px 15px;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* === SECCIONES === */
+        .section-box {
+            border: 1px solid #B59978;
+            border-radius: 4px;
+            margin-bottom: 18px;
+            overflow: hidden;
+        }
+        .section-header {
+            background: #B59978;
+            color: #FFFFFF;
+            padding: 6px 16px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .data-row {
+            display: flex;
+            border-bottom: 1px solid #E8E4DD;
+        }
+        .data-label {
+            width: 230px;
+            background: #F8F7F5;
+            padding: 9px 20px;
+            font-size: 14px;
+        }
+        .data-value {
+            flex: 1;
+            padding: 9px 20px;
+            font-size: 14px;
+        }
+
+        /* === TARJETAS DE AYUDA === */
+        .help-cards {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .card-left, .card-right {
+            width: 48%;
+            min-width: 300px;
+        }
+        .card-left-inner {
+            background: #F5F1EB;
+            border-radius: 4px;
+            padding: 25px 20px;
+            height: 100%;
+        }
+        .card-right-inner {
+            background: #902038;
+            color: #FFFFFF;
+            border-radius: 4px;
+            padding: 25px 20px;
+            height: 100%;
+        }
+        .card-right p {
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .recuerda-box {
+            background: #FFFFFF;
+            color: #000000;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        /* === PIE DE PÁGINA === */
+        .footer {
+            border-top: 1px solid #E0E0E0;
+            margin-top: 20px;
+            padding-top: 25px;
+            text-align: center;
+        }
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+        .footer-hacienda {
+            font-size: 26px;
+            font-weight: bold;
+            color: #702041;
+        }
+        .footer-sat {
+            font-size: 26px;
+            font-weight: bold;
+            color: #00529B;
+        }
+        .footer-bar {
+            background: #B59978;
+            color: #FFFFFF;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- === ENCABEZADO === -->
+    <div class="header-top">
+        <div class="header-logos">
+            <span class="header-hacienda">HACIENDA</span>
+            <span class="header-sat">SAT</span>
+        </div>
+        <div class="linea-separadora"></div>
+        <h1 class="gob-mex-title">GOBIERNO DE MÉXICO</h1>
+        <p class="subtitulo">Validación de Situación Fiscal — Activo</p>
+        <p class="fecha-hora" id="fechaHora"></p>
+    </div>
+
+    <!-- === BARRA RFC === -->
+    <div class="rfc-bar">
+        EL RFC: <strong>RASF2610242H8</strong>, tiene asociada la siguiente información
+    </div>
+
+    <!-- === DATOS DE IDENTIFICACIÓN === -->
+    <div class="section-box">
+        <div class="section-header">Datos de identificación</div>
+        
+        <div class="data-row">
+            <div class="data-label">CURP:</div>
+            <div class="data-value">RASF831024HMCMNR00</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">Nombre:</div>
+            <div class="data-value">Fernando Ramírez Santana</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">Apellido Paterno:</div>
+            <div class="data-value">Ramírez</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">Apellido Materno:</div>
+            <div class="data-value">Santana</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">Fecha Nacimiento:</div>
+            <div class="data-value">24/10/1983</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">Fecha de Inicio de operaciones:</div>
+            <div class="data-value">24/10/2026</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">Situación del contribuyente:</div>
+            <div class="data-value">Activo</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">Fecha del último cambio de situación:</div>
+            <div class="data-value">24/10/2026</div>
+        </div>
+    </div>
+
+    <!-- === DATOS DE UBICACIÓN === -->
+    <div class="section-box">
+        <div class="section-header">Datos de Ubicación (Domicilio fiscal vigente)</div>
+        
+        <div class="data-row">
+            <div class="data-label">Entidad Federativa:</div>
+            <div class="data-value">Ciudad de México</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">Municipio o delegación:</div>
+            <div class="data-value">Cuauhtémoc</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">Colonia:</div>
+            <div class="data-value">Centro</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">Tipo de vialidad:</div>
+            <div class="data-value">Calle</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">Nombre de la vialidad:</div>
+            <div class="data-value">Av. Hidalgo</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">Número exterior:</div>
+            <div class="data-value">77</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">Número interior:</div>
+            <div class="data-value">—</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">CP:</div>
+            <div class="data-value">06300</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">AL:</div>
+            <div class="data-value">09</div>
+        </div>
+    </div>
+
+    <!-- === CARACTERÍSTICAS === -->
+    <div class="section-box">
+        <div class="section-header">Características</div>
+        
+        <div class="data-row">
+            <div class="data-label">Régimen:</div>
+            <div class="data-value">Régimen de las Personas Físicas con Actividades Empresariales y Profesionales</div>
+        </div>
+        <div class="data-row">
+            <div class="data-label">Fecha de alta:</div>
+            <div class="data-value">24/10/2026</div>
+        </div>
+    </div>
+
+    <!-- === TARJETAS DE AYUDA === -->
+    <div class="help-cards">
+        <div class="card-left">
+            <div class="card-left-inner">
+                <h3 style="color:#702041; font-size:18px;">Genera tu Constancia de Situación Fiscal (CSF)</h3>
+            </div>
+        </div>
+        <div class="card-right">
+            <div class="card-right-inner">
+                <p><strong>1</strong> Ingresa al servicio con:<br>RFC _________ Contraseña _________</p>
+                <p><strong>2</strong> En la siguiente pantalla solo selecciona el botón: <strong>Generar Constancia</strong></p>
+                <p><strong>3</strong> Descarga y guarda tu: Constancia de Situación Fiscal (CSF)</p>
+                <div class="recuerda-box">
+                    <strong>Recuerda:</strong><br>
+                    • Todos los trámites del SAT son gratuitos<br>
+                    • Evita ser víctima de un fraude, no compartas tu información personal<br>
+                    • No requieres presentar tu constancia para que te emita una factura
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- === PIE DE PÁGINA === -->
+    <div class="footer">
+        <div class="footer-logos">
+            <span class="footer-hacienda">HACIENDA</span>
+            <span class="footer-sat">SAT</span>
+        </div>
+        <div class="footer-bar">
+            📘 📷 🔗 gob.mx/sat | sat.gob.mx
+        </div>
+    </div>
+
+    <!-- === FECHA Y HORA EN VIVO === -->
+    <script>
+        function actualizarFechaHora() {
+            const ahora = new Date();
+            const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
+            const opcionesHora = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            
+            const fecha = ahora.toLocaleDateString('es-MX', opcionesFecha);
+            const hora = ahora.toLocaleTimeString('es-MX', opcionesHora);
+            
+            document.getElementById('fechaHora').innerHTML = 
+                '<strong>Fecha y hora de consulta:</strong> ' + fecha + ' — ' + hora + ' (Hora del Centro de México)';
+        }
+        
+        // Actualizar al cargar la página
+        actualizarFechaHora();
+        // Actualizar cada segundo
+        setInterval(actualizarFechaHora, 1000);
+    </script>
+
+</body>
+</html>
